@@ -8,7 +8,7 @@ INCLUDE=-I$(MINISAT) -I$(MINISAT)/minisat/core -I$(MINISAT)/minisat/mtl -I$(MINI
 
 all:	ic3
 
-ic3:	$(MINISAT)/libminisat.dylib $(AIGER)/aiger.o Model.o IC3.o main.o
+ic3:	$(MINISAT)/build/release/lib/libminisat.a $(AIGER)/aiger.o Model.o IC3.o main.o
 	$(CXX) $(CFLAGS) $(INCLUDE) -o IC3 \
 		$(AIGER)/aiger.o Model.o IC3.o main.o \
 		$(MINISAT)/build/release/lib/libminisat.a
